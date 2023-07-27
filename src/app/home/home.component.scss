@@ -8,11 +8,13 @@ ul {
 }
 
 ul li a {
-    height: 20rem;
-    width: 20rem;
+    height: 14rem;
+    width: 24rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
-    margin: 0.5rem;
+    margin: 0.9rem;
+    margin-top: 2.6rem;
+    gap: 2rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -21,4 +23,27 @@ ul li a {
 
 li a:hover {
     opacity: 0.9;
+}
+
+
+.content {
+    display: flex;
+    position: absolute;
+    margin-top: 230px;
+}
+
+.price {
+    position: absolute;
+    margin-top: 250px;
+}
+
+.favourite {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.favourite.not {
+    color: black;
 }
