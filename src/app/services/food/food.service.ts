@@ -6,7 +6,10 @@ import { Foods } from 'src/app/shared/models/food';
 export class FoodService {
 
   constructor() { }
-
+  getAllFoodByTag(tag: string): Foods[] {
+    return tag == 'All' ?
+      this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
+  }
   getAll(): Foods[] {
     return [
       {
