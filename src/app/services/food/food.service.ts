@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { count } from 'rxjs';
 import { Foods } from 'src/app/shared/models/food';
+import { Tag } from 'src/app/shared/models/tag';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +11,18 @@ export class FoodService {
   getAllFoodByTag(tag: string): Foods[] {
     return tag == 'All' ?
       this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
+  }
+  getAllTag(): Tag[] {
+    return [
+      { name: 'All', count: 8 },
+      { name: 'FastFood', count: 4 },
+      { name: 'Pizza', count: 1 },
+      { name: 'Lunch', count: 2 },
+      { name: 'SlowFood', count: 3 },
+      { name: 'Hamburger', count: 1 },
+      { name: 'Fry', count: 2 },
+      { name: 'Soup', count: 1 },
+    ]
   }
   getAll(): Foods[] {
     return [
@@ -32,7 +46,7 @@ export class FoodService {
         origins: ['persia', 'middle east', 'china'],
         star: 4.7,
         imageUrl: "assets/images/foods/food-2.jpg",
-        tags: ['Slowfood', 'Lunch'],
+        tags: ['SlowFood', 'Lunch'],
       },
       {
         id: 3,
@@ -43,7 +57,7 @@ export class FoodService {
         origins: ['germeny', 'us'],
         star: 4.0,
         imageUrl: "assets/images/foods/food-3.jpg",
-        tags: ['Fastfood', 'Hamburger'],
+        tags: ['FastFood', 'Hamburger'],
       },
       {
         id: 4,
@@ -54,7 +68,7 @@ export class FoodService {
         origins: ['belgium', 'france'],
         star: 3.5,
         imageUrl: "assets/images/foods/food-4.jpg",
-        tags: ['Fastfood', 'Fry'],
+        tags: ['FastFood', 'Fry'],
       },
       {
         id: 5,
@@ -65,7 +79,7 @@ export class FoodService {
         origins: ['india', 'asia'],
         star: 3.5,
         imageUrl: "assets/images/foods/food-5.jpg",
-        tags: ['Slowfood', 'Soup'],
+        tags: ['SlowFood', 'Soup'],
       },
       {
         id: 6,
@@ -76,7 +90,7 @@ export class FoodService {
         origins: ['italy'],
         star: 4.5,
         imageUrl: "assets/images/foods/food-6.jpg",
-        tags: ['Fastfood', 'Pizza', 'Lunch'],
+        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 7,
@@ -87,7 +101,7 @@ export class FoodService {
         origins: ['belgium', 'france'],
         star: 3.5,
         imageUrl: "assets/images/foods/food-7.jpg",
-        tags: ['Fastfood', 'Fry'],
+        tags: ['FastFood', 'Fry'],
       },
       {
         id: 8,
@@ -98,7 +112,7 @@ export class FoodService {
         origins: ['belgium', 'france'],
         star: 3.5,
         imageUrl: "assets/images/foods/food-8.jpg",
-        tags: ['Softfood'],
+        tags: ['SlowFood'],
       }
     ]
   }
