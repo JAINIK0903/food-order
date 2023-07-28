@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
-  @Input() visible!: boolean
+  @Input() visible!: boolean;
 
 }
