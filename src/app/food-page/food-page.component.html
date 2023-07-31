@@ -1,5 +1,10 @@
-<app-not-found [visible]="!food" notFoundMessage="Product Not Found!" resetLinkText="Go To Homepage" />
-<div *ngIf="food" class="container">
+<ng-template #data>
+    <div class="d-flex flex-column align-items-center">
+        <p class="mb-3 text-center">Food item not-found</p>
+        <button class="btn btn-danger" routerLink="/">Back To Home</button>
+    </div>
+</ng-template>
+<div *ngIf="food; else data" class="container">
     <img [src]="food.imageUrl" [alt]="food.name">
     <div class="details">
         <div class="header">
